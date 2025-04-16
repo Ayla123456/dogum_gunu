@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sevgilim</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .snowflake {
+    position: fixed;
+    top: 20px; /* Sayfanın üstünden uzaklık */
+    right: 20px; /* Sayfanın sağından uzaklık */
+    font-size: 5rem; /* Kar tanesi boyutu */
+    color: #ffffff; /* Beyaz renk */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Gölge efekti */
+    z-index: 1000; /* Üstte durması için */
+    animation: spin 4s linear infinite; /* Dönme animasyonu */
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+       /* Kalp animasyon stili */
+.heart {
+    position: absolute;
+    font-size: 24px;
+    color: red;
+    animation: float 1.5s ease-out forwards;
+}
+
+@keyframes float {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        top: 0;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+        top: -50px;
+    }
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #103552, #A6988D);
+    color: #ffffff;
+    overflow: auto; /* Sayfanın kaymasına izin ver */
+    height: 100%; /* Sayfanın yüksekliğini tam ayarla */
+}
+
+        .container {
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin: 0;
+        }
+        p {
+            font-size: 1.5rem;
+            color: #fff;
+            margin: 20px 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        .gallery {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .container {
+            animation: fadeIn 2s ease-in;
+        }
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="snowflake">❄️</div>
+
+    <script>
+        // Mouse hareket ettikçe kalp ekleme
+        document.body.addEventListener("mousemove", function(event) {
+            // Kalp simgesini oluştur
+            const heart = document.createElement("div");
+            heart.textContent = "♥";
+            heart.classList.add("heart");
+    
+            // Sayfada rastgele bir yerde göster
+            heart.style.left = event.pageX + "px";  // Sayfa kaydırmasına göre x koordinatı
+            heart.style.top = event.pageY + "px";   // Sayfa kaydırmasına göre y koordinatı
+    
+            // Sayfaya ekle
+            document.body.appendChild(heart);
+    
+            // Kalp simgesinin kaybolmasını sağla
+            setTimeout(function() {
+                heart.remove();
+            }, 1500); // Kalp 1.5 saniye sonra kaybolacak
+        });
+    </script>
+    
+    
+
+    <iframe src="https://open.spotify.com/embed/track/5dYixGOC88EUudzcQChO7Y?utm_source=generator"
+    width="300" height="80" frameborder="0" 
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+</iframe>
+
+  
+    <div class="container">
+        <h1>Uzaklarda ama Hep Kalbimde Olana</h1>
+        <h3>Mezime özel</h3>
+        <p>Sevgiliiimmmmmm bugün senin doğum gününnnnnnn bu dünyaya gelişin sadece senin değil benim de en güzel hikayemin 
+          başlangıcııııığğğ çünkü senin varlığın benim hayatımda her şeyin anlam kazanması demek. Gülüşünle içimi ısıttığınn, gözlerinle dünyamı güzelleştirdiğinnn o anlar var yaa işte ben o anlarda kendimi en çok "iyi ki" derken buluyorum her seferinde. Seninle geçen her gün hayatın ne kadar değerli olduğunu hatırlatıyo bana yanımda olduğun her saniye huzur, her kelimen güven, her dokunuşun sevgi demek benim için. Sana baktığımda sadece birini değil, en yakın arkadaşımı, ailemi, yuvamı, sırdaşımı, kalbimin tam ortasını görüyorum.
+Mezim benim senin gibi biri bu dünyaya bir kere gelir ve ben o bir kere gelen mucizeye rastladım en güzel haliyle. İyi ki varsın, iyiiii kiiii doğmuşsuuuuunnnnnn. Hayatımda olduğun için ne kadar şanslı olduğumu anlatmaya kelimeler yetmez. Bugün, tüm dileklerin gerçek olsuuunnnn. Ama unutma ben zaten her günümde seni dileyenimm vee en büyük dileğim de hep seninle kalmak nice yaşlara nice sarılmalara hep birlikte hep yan yanaa 
+Doğum günün kutlu olsuuunnnnnnn birtanem benimmmm iyi ki varsııınnnn iyi kiii benimsiiinnnnn❤️❤️Seni çooooook amaaa çoooookkkkkk seviyoruuuuuuuuum❤️❤️❤️😘😘😘</p>
+        <div class="gallery">
+            <img src="img/img1.jpeg">
+            <img src="img/img2.jpeg">
+            <img src="img/img3.jpeg">
+        </div>
+    </div>
+</body>
+</html>
