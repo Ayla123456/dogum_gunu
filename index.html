@@ -8,6 +8,72 @@
     <link rel="stylesheet" href="script.js">
     <link rel="stylesheet" href="style.css">
     <style>
+         body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1e1e2f;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .snowglobe {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .globe {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(45deg, #87ceeb, #1e90ff);
+    border-radius: 50%;
+    box-shadow: inset 0 5px 10px rgba(255, 255, 255, 0.5),
+                0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .star {
+    position: absolute;
+    font-size: 20px; /* Yıldız boyutu */
+    animation: pulse 2s infinite;
+  }
+
+  .star1 {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+  }
+
+  .star2 {
+    top: 15%;
+    left: 70%;
+    animation-delay: 0.5s;
+  }
+
+  .star3 {
+    top: 5%;
+    left: 45%;
+    animation-delay: 1s;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0.6;
+    }
+  }
          .heart {
     position: absolute;
     width: 20px;
@@ -127,6 +193,15 @@ body {
     </style>
 </head>
 <body>
+    <div class="snowglobe">
+  <!-- Kar küresi -->
+  <div class="globe"></div>
+  <!-- Yıldızlar -->
+  <div class="star star1">⭐</div>
+  <div class="star star2">⭐</div>
+  <div class="star star3">⭐</div>
+</div>
+
     <script>
   // Kalp oluşturma işlevi
   function createHeart(x, y) {
