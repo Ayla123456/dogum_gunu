@@ -8,6 +8,26 @@
     <link rel="stylesheet" href="script.js">
     <link rel="stylesheet" href="style.css">
     <style>
+         .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    clip-path: polygon(50% 0%, 100% 38%, 81% 100%, 50% 75%, 19% 100%, 0% 38%);
+    animation: floatUp 2s ease-out forwards;
+    opacity: 0.8;
+  }
+
+  @keyframes floatUp {
+    0% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0) translateY(-100px);
+      opacity: 0;
+    }
+  }
       .snowflake {
     position: fixed;
     top: 20px; /* Sayfanın üstünden uzaklık */
@@ -107,6 +127,34 @@ body {
     </style>
 </head>
 <body>
+    <script>
+  // Kalp oluşturma işlevi
+  function createHeart(x, y) {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    document.body.appendChild(heart);
+
+    // Kalbin başlangıç pozisyonunu ayarla
+    heart.style.left = `${x}px`;
+    heart.style.top = `${y}px`;
+
+    // Kalbi belirli bir süre sonra kaldır
+    setTimeout(() => {
+      heart.remove();
+    }, 2000); // 2 saniye sonra kaldır
+  }
+
+  // Masaüstü için fare hareketini dinle
+  document.addEventListener("mousemove", (e) => {
+    createHeart(e.clientX, e.clientY);
+  });
+
+  // Dokunmatik ekranlar için parmak hareketini dinle
+  document.addEventListener("touchmove", (e) => {
+    const touch = e.touches[0]; // İlk dokunma noktasını al
+    createHeart(touch.clientX, touch.clientY);
+  });
+</script>
     <div class="snowflake">❄️</div>
 
     <script>
